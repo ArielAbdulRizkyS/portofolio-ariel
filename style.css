@@ -1,0 +1,117 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --card-bg: #fff;
+  --btn-bg: #333;
+  --btn-text: #fff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+  --btn-bg: #eee;
+  --btn-text: #121212;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.profile-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0077ff;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #0077ff;
+  font-weight: bold;
+}
+
+.biodata {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.biodata ul {
+  list-style: none;
+  padding: 0;
+}
+
+.biodata li {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/* ...existing code... */
+
+.social-links {
+  margin: 12px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f4f4f6;
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.social-links a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-links a:hover {
+  background: #e8e8ec;
+}
+
+/* ...existing code... */
