@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ariel Abdul Rizky Sigiro | Web Developer</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    :root {
+      --bg:#f5f6f8;
+      --muted:#6e7681;
+      --primary:#0094e9;
+      --card:#ffffff;
+      --accent:#f4f4f6;
+      --text:#1b1f23;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height:1.5;
+    }
+
+    header {
+      max-width:1100px;
+      margin:20px auto 0;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .avatar {
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      overflow:hidden;
+      background:linear-gradient(135deg,#e6eefb,#f6f8ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(10,20,40,0.06);
+    }
+
+    .avatar img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    header h1 {font-size:1.05rem;margin:0}
+    header p {color:var(--muted);font-size:0.88rem;margin:0}
+
+    nav {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:16px;
+    }
+
+    nav a {
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:500;
+      font-size:0.95rem;
+    }
+
+    nav a.active {color:var(--primary)}
+
+    main {
+      max-width:900px;
+      margin:30px auto;
+      padding:28px 20px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(10,20,40,0.06);
+      text-align:center;
+    }
+
+    h2 {color:var(--muted);margin:12px 0 6px;font-weight:600;font-size:1.2rem}
+    h1.main {margin:0;color:var(--text);font-size:2rem}
+
+    .divider {
+      width:64px;
+      height:6px;
+      background:var(--primary);
+      margin:20px auto;
+      border-radius:6px;
+    }
+
+    h3 {margin:16px 0 10px;font-size:1.1rem}
+
+    .social-container {
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      margin-top:22px;
+      flex-wrap:wrap;
+    }
+
+    .social-icon {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#111;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition:transform .18s ease, box-shadow .18s ease;
+      opacity:0;
+      animation: fadeSlideIn 0.8s forwards;
+    }
+
+    .social-icon:nth-child(1){animation-delay:0.2s}
+    .social-icon:nth-child(2){animation-delay:0.4s}
+    .social-icon:nth-child(3){animation-delay:0.6s}
+
+    .social-icon i {font-size:16px}
+    .social-icon:hover {transform:translateY(-4px);box-shadow:0 8px 20px rgba(10,20,40,0.08)}
+
+    /* specific colors */
+    .facebook{background:#3b82f6;color:white}
+    .instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);color:white}
+    .github{background:#0f172a;color:white}
+    .linkedin{background:#0a66c2;color:white}
+
+    /* Animasi kiri-kanan */
+    @keyframes fadeSlideIn {
+      from {opacity:0; transform:translateX(-40px);}
+      to {opacity:1; transform:translateX(0);}
+    }
+
+    /* Responsive */
+    @media (max-width:768px) {
+      header {
+        flex-direction:column;
+        text-align:center;
+      }
+      .brand {
+        justify-content:center;
+      }
+      nav {
+        justify-content:center;
+      }
+      main {
+        margin:20px 10px;
+        padding:20px;
+      }
+    }
+
+    @media (max-width:480px) {
+      .avatar {
+        width:60px;
+        height:60px;
+      }
+      header h1 {font-size:1rem;}
+      header p {font-size:0.8rem;}
+      nav a {font-size:0.85rem;}
+      h1.main {font-size:1.5rem;}
+      .social-icon {
+        padding:8px 10px;
+        font-size:12px;
+      }
+      .social-icon i {font-size:14px;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="avatar">
+        <img src="https://i.pinimg.com/474x/50/23/d6/5023d6380549cae455578375db224f34.jpg" alt="Foto Profil">
+      </div>
+      <div>
+        <h1>Ariel Abdul Rizky Sigiro</h1>
+        <p>Web Developer • Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Project</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Ariel Abdul Rizky Sigiro</h2>
+    <h1 class="main">Web Developer</h1>
+    <div class="divider"></div>
+
+    <h3>Find me on social media</h3>
+
+    <div class="social-container">
+      <a class="social-icon instagram" href="https://www.instagram.com/arielabrzky" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+      <a class="social-icon github" href="https://github.com/username" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span>GitHub</span></a>
+      <a class="social-icon linkedin" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+    </div>
+  </main>
+</body>
+</html>
