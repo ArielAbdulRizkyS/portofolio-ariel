@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,8 +12,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M9HF6V2G');</script>
 <!-- End Google Tag Manager -->
-
-
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
 
@@ -103,13 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h2 {color:var(--muted);margin:12px 0 6px;font-weight:600;font-size:1.2rem}
     h1.main {margin:0;color:var(--text);font-size:2rem}
 
-    .divider {
-      width:64px;
-      height:6px;
-      background:var(--primary);
-      margin:20px auto;
-      border-radius:6px;
-    }
+
 
     h3 {margin:16px 0 10px;font-size:1.1rem}
 
@@ -137,7 +130,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       animation: fadeSlideIn 0.8s forwards;
     }
   
-  
     .social-icon:nth-child(1){animation-delay:0.2s}
     .social-icon:nth-child(2){animation-delay:0.4s}
     .social-icon:nth-child(3){animation-delay:0.6s}
@@ -155,6 +147,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @keyframes fadeSlideIn {
       from {opacity:0; transform:translateX(-40px);}
       to {opacity:1; transform:translateX(0);}
+    }
+
+    /* Projects styles (ditambahkan) */
+    .projects-wrap {
+      text-align:left;
+      margin-top:28px;
+    }
+    .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:16px;
+    }
+    .project-card {
+      background:linear-gradient(180deg, #ffffff, #fbfcfe);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:0 8px 20px rgba(10,20,40,0.04);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .project-img {
+      height:160px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#eee;
+    }
+    .project-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-title {font-weight:700;color:var(--text);font-size:1rem}
+    .project-desc {color:var(--muted);font-size:0.95rem}
+    .tags {display:flex;gap:8px;flex-wrap:wrap}
+    .tag {font-size:12px;padding:6px 8px;border-radius:999px;background:var(--accent);color:var(--muted)}
+    .project-actions {display:flex;gap:8px}
+    .btn {padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:600;text-decoration:none}
+    .btn-primary {background:var(--primary);color:#fff}
+    .btn-outline {background:transparent;border:1px solid #e6e9ef;color:var(--text)}
+
+    /* single column responsive */
+    @media (max-width:800px) {
+      .projects-grid {grid-template-columns:1fr}
     }
 
     /* Responsive */
@@ -211,9 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav>
       <a href="#" class="active">Home</a>
-      <a href="index.html" class="back-project">About</a>
-      <a href="#">Project</a>
-      <a href="#">Contact</a>
+      <a href="index.html" class="back-project">Tentang Saya</a>
     </nav>
   </header>
 
@@ -229,16 +260,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="social-icon github another-medsos" href="https://github.com/username" target="_blank" rel="noopener noreferrer" data-another-medsos="github"><i class="fab fa-github"></i><span>GitHub</span></a>
       <a class="social-icon linkedin another-medsos" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener noreferrer" data-another-medsos="linkedin"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
     </div>
+</main>
+<main>
+    <!-- Projects section (diisi dengan konten projek) -->
+    <section class="projects-wrap" aria-labelledby="projects-heading">
+      <h3 id="projects-heading" style="margin-top:28px">Project Saya</h3>
+
+      <p class="project-intro" style="color:var(--muted);margin-top:6px">Beberapa proyek yang pernah saya kerjakan — klik "Lihat" untuk demo atau "Source" untuk kode.</p>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDjas07rZNINLkk3hzCJAebcK8geSm8Z3Vg&s" alt="Project Portfolio Screenshot">
+          </div>
+          <div>
+            <div class="project-title">Portfolio Personal</div>
+            <div class="project-desc">Website portofolio responsive untuk menampilkan biodata, proyek, dan kontak. Dibuat dengan HTML, CSS, dan sedikit JavaScript untuk interaksi.</div>
+            <div class="tags" style="margin-top:8px">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-actions" style="margin-top:auto">
+            <a href="#" class="btn btn-primary projek-ariel" target="_blank" rel="noopener noreferrer" data-projek-ariel="portodolio">Lihat</a>
+            <a href="https://github.com/superil06062006-cpu/portofolio-ariel" class="btn btn-outline repository" data-repository="personal" target="_blank" rel="noopener noreferrer">Source</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1526378726916-0f1a3d6b3f63?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project App Screenshot">
+          </div>
+          <div>
+            <div class="project-title">To‑Do Web App</div>
+            <div class="project-desc">Aplikasi daftar tugas sederhana dengan penyimpanan lokal (localStorage). Fokus pada kegunaan dan aksesibilitas.</div>
+            <div class="tags" style="margin-top:8px">
+              <span class="tag">JavaScript</span>
+              <span class="tag">localStorage</span>
+              <span class="tag">A11y</span>
+            </div>
+          </div>
+          <div class="project-actions" style="margin-top:auto">
+            <a href="movie.html" class="btn btn-primary projek-ariel" target="_blank" rel="noopener noreferrer" data-projek-ariel="rating-film">Lihat</a>
+            <a href="https://github.com/username/todo-app" class="btn btn-outline repository" target="_blank" data-repository="movie-rating" rel="noopener noreferrer">Source</a>
+          </div>
+        </article>
+
+        <!-- Project 3 (contoh) -->
+        <article class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project API Screenshot">
+          </div>
+          <div>
+            <div class="project-title">Weather Dashboard</div>
+            <div class="project-desc">Dashboard cuaca sederhana menggunakan API pihak ketiga. Menampilkan cuaca hari ini dan 5 hari ke depan.</div>
+            <div class="tags" style="margin-top:8px">
+              <span class="tag">Fetch API</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+          <div class="project-actions" style="margin-top:auto">
+            <a href="https://example.com/weather" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Lihat</a>
+            <a href="https://github.com/username/weather-dashboard" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Source</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="text-align:center;margin-top:18px">
+        <a href="index.html" class="btn btn-outline" style="text-decoration:none">Kembali ke Biodata</a>
+      </p>
+    </section>
+
   </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
