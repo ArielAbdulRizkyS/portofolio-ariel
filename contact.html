@@ -6,6 +6,7 @@
   <title>Contact - Ariel Audhia Putra</title>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a2d9d6e52d.js" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D33HNTWZP9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -220,7 +221,7 @@
     <nav>
       <a href="ariel-coba.html" id="switchPage">Home</a>
       <a href="index.html" class="back-project">About</a>
-      <a href="#">Contact</a>
+      <a href="#" id="contact">Contact</a>
     </nav>
     <div class="controls">
       <!-- Single visible button: Change color (no animation) -->
@@ -336,8 +337,7 @@
       setTimeout(()=>{ alert('Message sent.'); this.disabled = false; this.textContent = 'Send Message'; document.getElementById('contactForm').reset(); }, 900);
     });
   </script>
-</body>
-   <script>
+  <script>
 document.getElementById('contact').addEventListener('click', function() {
  dataLayer.push({
  'event': 'contacttracking',
@@ -346,6 +346,10 @@ document.getElementById('contact').addEventListener('click', function() {
  'posisi': 'navbar'
  });
 });
+</script>
+</body>
+
 </html>
+
 
 
