@@ -339,10 +339,9 @@
   </script>
   <script>
 document.getElementById('contact').addEventListener('click', function() {
- dataLayer.push({
- 'event': 'contacttracking',
+ gtag( 'event', 'contacttracking', {
  'panel_name': 'contactpage',
-   'panel_medsos': 'medsos',
+ 'panel_medsos': 'medsos',
  'posisi': 'navbar'
  });
 });
@@ -350,6 +349,7 @@ document.getElementById('contact').addEventListener('click', function() {
 </body>
 
 </html>
+
 
 
 
