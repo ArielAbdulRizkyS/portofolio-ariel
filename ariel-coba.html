@@ -5,6 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ariel Abdul Rizky Sigiro | Web Developer</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D33HNTWZP9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D33HNTWZP9');
+</script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -444,7 +453,7 @@
 
     <nav>
       <a href="#" class="active">Home</a>
-      <a href="contact.html" class="contact">Contact</a>
+      <a href="contact.html" id="contact">Contact</a>
       <a href="index.html" class="back-project">Tentang Saya</a>
     </nav>
   </header>
@@ -569,6 +578,18 @@
       <div class="footer-bottom">© 2025 Ariel Abdul Rizky Sigiro — Rights Reserved.</div>
     </div>
   </footer>
+  <script>
+document.getElementById('contact').addEventListener('click', function() {
+ dataLayer.push({
+ 'event': 'contacttracking',
+ 'panel_name': 'contactpage',
+   'panel_medsos': 'medsos',
+ 'posisi': 'navbar'
+ });
+});
+</script>
+
 </body>
 
 </html>
+
