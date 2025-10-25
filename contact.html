@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Ariel Audhia Putra</title>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9d6e52d.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --text:#0f172a;
+      --accent:#0094e9;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#f6f8fb 0%, #ffffff 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Page wrapper */
+    .site {
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    } header {
+     background: #f5f5f5; /* warna tetap header */
+     color: #0f172a;
+   }
+   header .logo { color: #0f172a; }
+   header nav a { color: #333; }
+   header .controls { color: #0f172a; }
+
+   /* Pastikan dark mode tidak mengoverride header */
+   body.dark header,
+   body.dark header .logo,
+   body.dark header nav a,
+   body.dark header .controls {
+     background: #f5f5f5 !important;
+     color: #0f172a !important;
+   }
+   body.dark header nav a { color: #333 !important; }
+
+
+     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f5f5f5;
+      padding: 15px 50px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #0099ff;
+    }
+       /* Gaya untuk tombol Change color: tidak dianimasikan dan berwarna solid */
+       .dark-toggle{
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0,148,233,0.12);
+      transition: none; /* matikan animasi/transisi */
+    }
+    .dark-toggle:hover{
+      transform: none;
+      box-shadow: 0 6px 18px rgba(0,148,233,0.12);
+    }
+
+    /* Pastikan tombol tetap biru saat dark mode */
+    body.dark .dark-toggle{
+      background: var(--accent); /* tetap gunakan warna biru */
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(0,148,233,0.16);
+    }
+  
+
+    @keyframes dashMove{from{background-position:0 0}to{background-position:-300% 0}}
+
+    /* Main content */
+    main.site-main {flex:1; padding:36px 20px}
+    .hero {
+      max-width:1100px;
+      margin:0 auto 26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .hero .left {
+      flex:1; min-width:280px;
+    }
+    .hero h1{font-size:1.6rem;margin-bottom:6px}
+    .hero p.lead{color:var(--muted);margin-bottom:0.5rem}
+
+    /* Contact  social layout */
+    .card {
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:24px;
+      align-items:start;
+    }
+    .form-card{
+      background:var(--card);
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(10,20,40,0.04);
+      border:1px solid rgba(10,20,40,0.03);
+    }
+    form .field {margin-top:12px}
+    label{display:block;font-weight:600;color:var(--text);margin-bottom:8px}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid #e6e9ef;font-size:14px;background:transparent;outline:none;
+    }
+    textarea{min-height:140px;resize:vertical}
+    .actions{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn {padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;border:1px solid #e6e9ef;color:var(--text)}
+
+    /* Social column */
+    .social-card-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .social-panel{
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:12px;padding:14px;width:100%;
+      box-shadow:0 8px 20px rgba(10,20,40,0.04);border:1px solid rgba(10,20,40,0.03);
+    }
+    .social-row{display:flex;flex-direction:column;gap:10px}
+    .social-link{
+      display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:white;font-weight:700;text-decoration:none;
+    }
+    .social-link i{width:26px;text-align:center}
+    .social-link.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
+    .social-link.github{background:#0f172a}
+    .social-link.linkedin{background:#0a66c2}
+
+    /* Footer */
+    footer.site-footer{
+      margin-top:48px;
+      border-top:1px solid rgba(10,20,40,0.04);
+      background:transparent;
+    }
+    .footer-inner{
+      max-width:1100px;margin:0 auto;padding:28px 20px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;
+    }
+    .footer-col{min-width:200px;flex:1}
+    .footer-col h4{margin-bottom:12px}
+    .footer-bottom{margin-top:12px;padding-top:12px;border-top:1px solid rgba(10,20,40,0.04);text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .card{grid-template-columns:1fr 320px}
+    }
+    @media (max-width:800px){
+      nav.top-nav{display:none}
+      .hero{flex-direction:column;align-items:flex-start}
+      .card{grid-template-columns:1fr}
+      .social-card-wrap{align-items:stretch}
+    }
+    /* Dark mode */
+    body.dark{
+      background:linear-gradient(180deg,#071226 0%, #011026 100%);
+      color:#dbeafe;
+    }
+    body.dark .card, body.dark .form-card, body.dark .social-panel{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-color: rgba(255,255,255,0.04)}
+    body.dark .brand .title, body.dark label{color:#e6eef9}
+    body.dark nav.top-nav a{color:rgba(255,255,255,0.75)}
+    body.dark .cta{color:#071226}
+  </style>
+</head>
+
+<body class="site">
+<header>
+     <div class="logo">Ariel Abdul Rizky Sigiro <div>
+        <span style="font-size:12px;color:var(--muted)">Web Developer</span>
+     </div></div>
+    <nav>
+      <a href="ariel-coba.html">Home</a>
+      <a href="index.html">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="controls">
+      <!-- Single visible button: Change color (no animation) -->
+      <button class="dark-toggle" id="colorBtn" aria-pressed="false" aria-label="Change color">Change color</button>
+    </div>
+  </header>
+
+  <div class="header-divider" aria-hidden="true"></div>
+
+  <main class="site-main" role="main">
+    <div class="hero">
+      <div class="left">
+        <h1>Let's build something great together</h1>
+        <p class="lead">Punya ide? Ceritakan kebutuhanmu — saya akan bantu mewujudkannya lewat web yang cepat & responsif.</p>
+      </div>
+      <div style="text-align:right;min-width:220px">
+        <div style="font-size:13px;color:var(--muted)">Available for freelance</div>
+        <div style="font-weight:700;margin-top:8px">Open for new projects</div>
+      </div>
+    </div>
+
+    <section class="card" aria-labelledby="contact-heading">
+      <div class="form-card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <p style="color:var(--muted);margin-top:6px">Isi form berikut atau kirim email langsung ke <strong>arielgarizky@gmail.com</strong>.</p>
+
+        <form id="contactForm" style="margin-top:12px" onsubmit="return false;">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@domain.com" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Describe your project..." required></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" id="sendBtn" type="submit">Send Message</button>
+            <button class="btn ghost" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="social-card-wrap" aria-label="Social media">
+        <div class="social-panel">
+          <h3 style="margin:0 0 8px 0">Visit my social</h3>
+          <div class="social-row">
+            <a class="social-link instagram" href="https://www.instagram.com/arielabrzky" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i>Instagram</a>
+            <a class="social-link github" href="https://github.com/username" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+            <a class="social-link linkedin" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="social-panel" aria-hidden="false">
+          <h3 style="margin:0 0 8px 0">Quick info</h3>
+          <div style="color:var(--muted);font-size:14px">
+            <div>📍 Jakarta, Indonesia</div>
+            <div style="margin-top:6px">📧 <a href="mailto:arielgarizky@gmail.com">arielgarizky@gmail.com</a></div>
+            <div style="margin-top:6px">💼 Available for freelance & collaboration</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Ariel Abdul Rizky Sigiro</h4>
+        <p style="color:var(--muted);font-size:14px">Web developer — front-end & small backend, focus on performance & accessibility.</p>
+      </div>
+
+    
+      <div style="flex-basis:100%;height:0;"></div>
+
+      <div class="footer-bottom">© 2025 Ariel Abdul Rizky Sigiro — Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+     // Color toggle (single button) - no animation on button
+   (function(){
+     const btn = document.getElementById('colorBtn');
+     const body = document.body;
+     const KEY = 'dark-mode';
+     const saved = localStorage.getItem(KEY) === 'true';
+     if (saved) {
+       body.classList.add('dark');
+       btn.setAttribute('aria-pressed', 'true');
+     } else {
+       btn.setAttribute('aria-pressed', 'false');
+     }
+     btn.addEventListener('click', () => {
+       const isDark = body.classList.toggle('dark');
+       btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+       localStorage.setItem(KEY, !!isDark);
+     });
+   })();
+    // Simple client-side send simulation
+    document.getElementById('sendBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){ alert('Please complete the form.'); return; }
+      // Replace with real submission logic
+      this.disabled = true;
+      this.textContent = 'Sending...';
+      setTimeout(()=>{ alert('Message sent.'); this.disabled = false; this.textContent = 'Send Message'; document.getElementById('contactForm').reset(); }, 900);
+    });
+  </script>
+</body>
+</html>
